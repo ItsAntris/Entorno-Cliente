@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <script>
+        let num=prompt("Introduce un número");
+
+        let esPrimo = true;
+
+
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i === 0) {
+                esPrimo = false;
+                break;
+            }
+        }
+
+        if (esPrimo) {
+            document.write(num + " es un número primo.");
+        } else {
+            document.write(num + " no es un número primo.");
+        }
+
+    </script>
+</body>
+</html>
