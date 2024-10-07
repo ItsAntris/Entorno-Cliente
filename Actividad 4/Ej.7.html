@@ -3,18 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificador de Número Armstrong</title>
 </head>
 <body>
+    <h1>Verificador de Número Armstrong</h1>
+    <p id="resultado"></p>
+
     <script>
-        let num=prompt("Introduce un número entre 1 y 10");
-        let aleatorio=Math.random(11);
+    let numero = prompt("Introduce un número");
+    numero = parseInt(numero);  // Convertimos el número de cadena a entero
+    
+    if (isNaN(numero)) {
+        document.getElementById("resultado").innerText = "Por favor introduce un número válido.";
+    } else {
+        let digitos = numero.toString().split('');
+        let numeroDeDigitos = digitos.length;
 
-        if (num==aleatorio){
-            alert("Acierto makinon");
-        }else{
-            alert("Fallaste por votar al PSOE");
+        let suma = digitos.reduce((acumulador, digito) => {
+            return acumulador + Math.pow(parseInt(digito), numeroDeDigitos);
+        }, 0);
+
+        if (suma === numero) {
+            document.getElementById("resultado").innerText = `${numero} es un número Armstrong.`;
+        } else {
+            document.getElementById("resultado").innerText = `${numero} no es un número Armstrong.`;
         }
-
+    }
     </script>
 </body>
 </html>

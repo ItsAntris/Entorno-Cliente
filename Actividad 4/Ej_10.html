@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reemplazar Palabra en Frase</title>
+</head>
+<body>
+    <script>
+    // Pedimos una frase al usuario
+    let frase = prompt("Introduce una frase:");
+    
+    // Pedimos la palabra que desea reemplazar
+    let palabraAReemplazar = prompt("Introduce la palabra que deseas reemplazar:");
+    
+    // Pedimos la nueva palabra
+    let nuevaPalabra = prompt("Introduce la nueva palabra:");
+
+    if (frase.includes(palabraAReemplazar)) {
+        let nuevaFrase = frase.replace(palabraAReemplazar, nuevaPalabra);
+
+        document.write(nuevaFrase);
+    } else {
+        document.write("La palabra no se encontró en la frase.`");
+    }
+    </script>
+</body>
+</html>

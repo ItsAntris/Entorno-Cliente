@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    function contarVocales(cadena) {
+        // Definimos las vocales que queremos contar
+        const vocales = ['a', 'e', 'i', 'o', 'u', 'á', 'é', 'í', 'ó', 'ú'];
+        let contador = 0;
+
+        // Convertimos la cadena a minúsculas para contar las vocales sin importar mayúsculas
+        cadena = cadena.toLowerCase();
+
+        // Recorremos la cadena y contamos las vocales
+        for (let letra of cadena) {
+            if (vocales.includes(letra)) {
+                contador++;
+            }
+        }
+
+        return contador;
+    }
+
+        let entrada=prompt("Introduce una entrada");
+
+        let numero=contarVocales(entrada);
+
+        document.write(numero);
+    </script>
+</body>
+</html>
