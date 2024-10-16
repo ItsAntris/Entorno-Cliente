@@ -1,0 +1,32 @@
+<!--Mediante un formulario vamos a añadir párrafos-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Añade párrafos</title>
+</head>
+<body>
+    <h1>Añade párrafos</h1>
+    <div id="div1">
+
+    </div>
+
+    <form>
+        <textarea cols="50" rows="2"  id="campoFrase" placeholder="Nuevo párrafo"></textarea><br>
+        <input type="reset" value="Añadir párrafo" onclick="AniadirParrafo()">
+    </form>
+
+    <script>
+        function AniadirParrafo(){
+            let nuevoParrafo = document.getElementById("campoFrase").value;
+            let nuevoElemento = document.createElement("p");
+            let texto = document.createTextNode(nuevoParrafo);
+            nuevoElemento.appendChild(texto);
+            document.getElementById("div1").appendChild(nuevoElemento);
+            document.getElementById("campoFrase").value = "";
+        }
+    </script>
+</body>
+</html>

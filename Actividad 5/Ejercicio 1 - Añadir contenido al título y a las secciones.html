@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Añadir contenido al título</title>
+</head>
+<body>
+    <h1 id="titulo">Título: </h1>
+    <h2 id="seccion1">Sección 1:</h2>
+    <h2 id="seccion2">Sección 2: </h2>
+    <hr>
+    <br>
+    <form>
+        <h4>Introduce el título: </h4>
+        <!--Para darle tamaño al textarea se usan cols y rows -->
+        <textarea cols="50" rows="5" id="Titulo" placeholder="Título"></textarea>
+        <br>
+        <h4>Introduce la sección 1: </h4>
+        <textarea cols="50" rows="5" id="Seccion1" placeholder="Primera sección"></textarea>
+        <br>
+        <h4>Introduce la sección 2: </h4>
+        <textarea cols="50" rows="5" id="Seccion2" placeholder="Segunda sección"></textarea>
+        <br><br>
+        <!--Hacemos un botón de tipo reset para que lo que escribamos al enviarlo se borre y podamos seguir.-->
+        <button type="reset" style="width: 200px; height: 80px; background-color: rgba(0, 0, 255, 0.212);" onclick="rellenarInformacion()">Rellenar información</button>
+    </form>
+
+    <script>
+        function rellenarInformacion() {
+            let titulo = document.getElementById("Titulo").value;
+            let seccion1 = document.getElementById("Seccion1").value;
+            let seccion2 = document.getElementById("Seccion2").value;
+            
+            document.getElementById("titulo").innerText = "Título: " + titulo;
+            document.getElementById("seccion1").innerText = "Sección 1: " + seccion1;
+            document.getElementById("seccion2").innerText = "Sección 2: " + seccion2;
+        }
+    </script>
+</body>
+</html>
