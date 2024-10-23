@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Creamos un array de ciudades
+        let ciudades=["Madrid", "Sevilla", "Valencia", "Zaragoza", "Lugo", "Barcelona"];
+
+        //Buscar si madrid esta en el array y lo muestra
+        console.log(ciudades.includes("Madrid"));
+
+        //Nos dice la posicion de la palabra buscada y lo muestra
+        console.log(ciudades.indexOf("Barcelona"));
+
+        //Agrega la ciudad si no esta
+        if(ciudades.indexOf("Badajoz")==-1){
+            ciudades.push("Badajoz");
+        }
+        console.log(ciudades);
+    </script>
+</body>
+</html>

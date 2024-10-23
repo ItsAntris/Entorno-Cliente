@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Creamos el array
+        let frutas=["manzana", "banana", "naranja" ,"uva"];
+
+        //Accedemos a su primer y ultimo lugar
+        let primero=frutas[0];
+        let ultimo=frutas[frutas.length-1];
+
+        //Añadimos una fruta al final de array
+        frutas[frutas.length]="kiwi";
+
+        //Mostramos por consola su contenido y su longitud
+        frutas.forEach(function(fruta){
+            console.log(fruta);
+        })
+        console.log(frutas.length);
+    </script>
+</body>
+</html>

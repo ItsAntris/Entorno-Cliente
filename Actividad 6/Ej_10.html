@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Creamos el array
+        let ventas=[100, 200, 300, 400, 500];
+
+        //Sumamos todo y lo mostramos
+        const  totalVentas=ventas.reduce((acumulador, ventas)=>{
+            return acumulador+ventas;
+        }, 0);
+        console.log(totalVentas);
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Creamos la persona con datos inventados
+        const persona={
+            nombre:"Juan",
+            apellido:"Panchitez",
+            edad:37,
+            pais:"Honduras"
+        };
+
+        //Modificamos la edad del objeto persona
+        persona.edad=32;
+
+        //Añadimos una nueva propiedad al objeto
+        persona.profesion="Dependiente";
+
+        //Eliminamos la propiedad pais
+        delete persona.pais;
+
+        //Mostramos el objeto por consola
+        console.log(persona);
+    </script>
+</body>
+</html>

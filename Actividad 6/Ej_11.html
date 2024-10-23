@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Creamos el array
+        let matrizNotas=[[7,2,6], [5,4,8], [8,4,5]];
+
+        //Guardamos la segunda nota del segundo estudiante
+        const nota2=matrizNotas[1][1];
+
+        //Calcula el promedio de las notas
+        let sumaTotal = 0;
+        let cantidadNotas = 0;
+        
+        for (let i = 0; i < matrizNotas.length; i++) {
+            for (let j = 0; j < matrizNotas[i].length; j++) {
+                sumaTotal += matrizNotas[i][j];
+                cantidadNotas++;
+            }
+        }
+
+        const promedioNotas = sumaTotal / cantidadNotas;
+
+        console.log(nota2);
+        console.log(promedioNotas);
+    </script>
+</body>
+</html>

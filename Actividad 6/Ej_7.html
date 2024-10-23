@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Creamos el array vacio
+        let empleados=[];
+
+        //Creamos a los empleados
+        const empleado1={
+            nombre:"Juan",
+            edad:35,
+            salario:1200
+        };
+        const empleado2={
+            nombre:"Pepe",
+            edad:25,
+            salario:2200
+        };
+        const empleado3={
+            nombre:"Fran",
+            edad:45,
+            salario:1500
+        };
+
+        //Añadimos los empleados al array
+        empleados.push(empleado1, empleado2, empleado3);
+
+        //Ordenamos por sueldo
+        empleados.sort((a,b)=>a.salario-b.salario);
+
+        //Filtramos solo los mayores de 30
+        const mayor30=empleados.filter(empleado=>empleado.edad>30);
+
+        //Mostramos los resultados
+        console.log(empleados);
+        console.log(mayor30);
+    </script>
+</body>
+</html>

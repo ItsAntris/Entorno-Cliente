@@ -20,14 +20,14 @@
     <button type="reset" onclick="aniade()">Añadir nombre</button>
 
     <script>
-        function aniade(){
-            let nuevoAlumno=document.getElementById("nombre").value;
-            let nuevoItem=document.createElement('li');
-            document.getElementById("lista").appendChild(nuevoItem);
-            lista.textContent=nuevoAlumno;
-            ul.appendChild("li")
-
+        function aniade() {
+            let nuevoAlumno = document.getElementById("nombre").value;
             
+            let nuevoItem = document.createElement('li');
+            nuevoItem.textContent = nuevoAlumno;
+            document.getElementById("lista").appendChild(nuevoItem);
+            
+            document.getElementById("nombre").value = "";
         }
     </script>
 

@@ -14,7 +14,6 @@
             <th>Calificación</th>
         </thead>
         <tbody id="cuerpo" style="text-align: center;">
-           
         </tbody>
     </table>
     <br><br>
@@ -23,13 +22,29 @@
         <h4>Calificación: </h4><textarea cols="40" rows="2" placeholder="Nota" id="dato2"></textarea> <br><br>
         <input type="reset" value="Añadir elemento" onclick="aniadeElementos()">    
     </form>
-
-   
-
     <script>
-       
+        function aniadeElementos(){
+            let nombre = document.getElementById("dato1").value;
+            let calificacion = document.getElementById("dato2").value;
+
+            let tbody = document.getElementById("cuerpo");
+            let tr = document.createElement("tr");
+
+            let tdN = document.createElement("td");
+            let tdC = document.createElement("td");
+
+            tdN.textContent = nombre;
+            tdC.textContent = calificacion;
+
+            tr.appendChild(tdN);
+            tr.appendChild(tdC);
+
+            tbody.appendChild(tr);
+
+            // Limpiar los campos de texto
+            document.getElementById("dato1").value = "";
+            document.getElementById("dato2").value = "";
+        }
     </script>
-
-
 </body>
 </html>

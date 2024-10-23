@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Creamos el array vacío
+        const productos = [];
+
+        // Creamos los productos
+        const producto1 = {
+            nombre: "Pantalla",
+            categoria: "Tecnologia",
+            precio: 115
+        };
+        const producto2 = {
+            nombre: "Teclado",
+            categoria: "Tecnologia",
+            precio: 75
+        };
+        const producto3 = {
+            nombre: "Pack Rotuladores",
+            categoria: "Libreria",
+            precio: 45
+        };
+
+        // Añadimos los productos al array
+        productos.push(producto1, producto2, producto3);
+
+        // Filtramos los de categoría tecnologia
+        const tecnologia = productos.filter(producto => producto.categoria === "Tecnologia");
+
+        // Filtramos solo los mayores de 100
+        const mayor100 = productos.filter(producto => producto.precio > 100);
+
+        // Mostramos los resultados en la consola
+        console.log("Todos los productos:", productos);
+        console.table(mayor100);
+        console.table(tecnologia);
+    </script>
+</body>
+</html>
