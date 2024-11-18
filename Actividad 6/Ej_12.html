@@ -7,10 +7,14 @@
 </head>
 <body>
     <script>
-        //Creamos el array
-        let numerosDuplicados=[1, 2, 3, 4, 1, 2, 5, 6];
+        // Crea el array con números duplicados
+        const numerosDuplicados = [1, 2, 3, 4, 1, 2, 5, 6];
 
-        
+        // Elimina los duplicados usando Set
+        const numerosSinDuplicados = [...new Set(numerosDuplicados)];
+
+        // Muestra el array sin duplicados por consola
+        console.log(numerosSinDuplicados);
     </script>
 </body>
 </html>

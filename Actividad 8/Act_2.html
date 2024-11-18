@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="return validarDatos()">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Introduce tu nombre">
+        <br><br>
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" placeholder="Introduce tu apellido">
+        <br><br>
+        <label for="telefono">Telefono:</label>
+        <input type="text" id="telefono" name="telefono" placeholder="Introduce tu telefono">
+        <br><br>
+        <input type="submit" value="Enviar">
+    </form>
+
+    <p id="error" style="display: none;">Todos los campos tienen que estar rellenos</p>
+
+    <script>
+        function validarDatos(){
+            let nombre=document.getElementById("nombre").value;
+            let apellido=document.getElementById("apellido").value;
+            let telefono=document.getElementById("telefono").value;
+            let error=document.getElementById("error");
+    
+            if (nombre==="" || apellido==="" || telefono===""){
+                error.style.display='block';
+                return false;
+            }else{
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>

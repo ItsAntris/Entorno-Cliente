@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Crea un array llamado datos con 3 elementos
+        const datos = ["Juan", 25, "Sevilla"];
+
+        // Usa destructuring para extraer los valores en variables individuales
+        const [nombre, edad, ciudad] = datos;
+
+        // Crea un objeto llamado persona
+        const persona = {
+            nombre: "Ana",
+            edad: 30,
+            ciudad: "Madrid"
+        };
+
+        // Utiliza destructuring para extraer las propiedades nombre y edad
+        const { nombre: nombrePersona, edad: edadPersona } = persona;
+
+        // Muestra los resultados por consola
+        console.log("Datos extraídos del array:");
+        console.log(`Nombre: ${nombre}`);
+        console.log(`Edad: ${edad}`);
+        console.log(`Ciudad: ${ciudad}`);
+
+        console.log("\nDatos extraídos del objeto persona:");
+        console.log(`Nombre: ${nombrePersona}`);
+        console.log(`Edad: ${edadPersona}`);
+
+    </script>
+</body>
+</html>

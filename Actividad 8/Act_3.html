@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="contraseña">Contraseña:</label>
+        <input type="password" id="contraseña" placeholder="Introduce tu contraseña">
+        <br><br>
+        <label for="confirmarContraseña">Confirmar contraseña:</label>
+        <input type="password" id="confirmarContraseña" placeholder="Confirma tu contraseña">
+        <br>
+        <input type="checkbox" id="mostrar" name="mostrar" onclick="mostrarContraseña()">
+        <label for="mostrar">Mostrar contraseña</label>
+    </form>
+
+    <script>
+        function mostrarContraseña(){
+            let contraseña=document.getElementById("contraseña");
+            let confirmarContraseña=document.getElementById("confirmarContraseña");
+            let verContraseña=document.getElementById("mostrar").checked;
+
+            if(verContraseña){
+                contraseña.type='text';
+                confirmarContraseña.type='text';
+            }else{
+                contraseña.type='password';
+                confirmarContraseña.type='password';
+            }
+        }
+    </script>
+</body>
+</html>

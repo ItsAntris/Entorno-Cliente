@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Crea el array de objetos libros
+        const libros = [
+        { titulo: "Cien años de soledad", autor: "Gabriel García Márquez", anioPublicacion: 1967 },
+        { titulo: "Don Quijote de la Mancha", autor: "Miguel de Cervantes", anioPublicacion: 1605 },
+        { titulo: "El amor en los tiempos del cólera", autor: "Gabriel García Márquez", anioPublicacion: 1985 },
+        { titulo: "1984", autor: "George Orwell", anioPublicacion: 1949 },
+        { titulo: "Crónica de una muerte anunciada", autor: "Gabriel García Márquez", anioPublicacion: 1981 },
+        { titulo: "El alquimista", autor: "Paulo Coelho", anioPublicacion: 1988 },
+        ];
+
+        // Ordena el array de libros
+        libros.sort((a, b) => {
+        // Primero ordena por año de publicación
+        if (a.anioPublicacion !== b.anioPublicacion) {
+            return a.anioPublicacion - b.anioPublicacion;
+        }
+        // Si los años son iguales, ordena por título alfabéticamente
+        return a.titulo.localeCompare(b.titulo);
+        });
+
+        // Muestra el resultado final
+        console.log(libros);
+
+    </script>
+</body>
+</html>

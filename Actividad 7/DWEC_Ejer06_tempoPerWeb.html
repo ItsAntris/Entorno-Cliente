@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Título principal que indica que se mostrará el tiempo en segundos -->
+    <h1>Segundos en la web: </h1>
+
+    <!-- Etiqueta donde se mostrará el tiempo en segundos -->
+    <h2 id="tiempo"></h2>
+
+    <script>
+        // Variable para llevar el conteo de los segundos
+        let temporizador = 0;
+
+        // Función que incrementa el contador de segundos
+        function tiempo(){
+            temporizador++;  // Incrementa el contador de segundos
+
+            // Obtiene el elemento HTML con id "tiempo" donde se mostrará el contador
+            let tiempo = document.getElementById("tiempo");
+            // Actualiza el contenido del elemento con el valor del contador
+            tiempo.innerText = temporizador;
+        }
+
+        // Llama a la función 'tiempo' cada 1000 milisegundos (1 segundo) para actualizar el contador
+        setInterval(tiempo, 1000);
+    </script>
+</body>
+</html>

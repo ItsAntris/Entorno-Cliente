@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Instrucción para el usuario -->
+    <h4>Introduce la temperatura a transformar</h4>
+
+    <!-- Área de texto donde el usuario introduce la temperatura -->
+    <textarea name="input" id="textArea"></textarea>
+    <br>
+
+    <!-- Botones que ejecutan las funciones para transformar la temperatura -->
+    <button onclick="celsius()">Transformar a Celsius</button>
+    <button onclick="fahrenhe()">Transformar a Fahrenheit</button>
+
+    <!-- Etiqueta donde se mostrará la temperatura transformada -->
+    <h1 id="temperatura"></h1>
+
+    <script>
+        // Función que transforma la temperatura de Fahrenheit a Celsius
+        function celsius(){
+            // Obtiene el valor de la temperatura ingresada en el área de texto
+            let temperatura = document.getElementById("textArea").value;
+            // Convierte la temperatura de Fahrenheit a Celsius usando la fórmula
+            temperatura = (temperatura - 32) * 5 / 9;
+            // Muestra el resultado en la etiqueta con id "temperatura"
+            let nuevaTemperatura = document.getElementById("temperatura");
+            nuevaTemperatura.innerText = temperatura;
+        }
+
+        // Función que transforma la temperatura de Celsius a Fahrenheit
+        function fahrenhe(){
+            // Obtiene el valor de la temperatura ingresada en el área de texto
+            let temperatura = document.getElementById("textArea").value;
+            // Convierte la temperatura de Celsius a Fahrenheit usando la fórmula
+            temperatura = (temperatura * 9 / 5) + 32;
+            // Muestra el resultado en la etiqueta con id "temperatura"
+            let nuevaTemperatura = document.getElementById("temperatura");
+            nuevaTemperatura.innerText = temperatura;
+        }
+    </script>
+</body>
+</html>

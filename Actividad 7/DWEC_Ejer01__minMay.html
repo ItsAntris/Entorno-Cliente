@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Solicita al usuario que ingrese una cadena de texto
+        let cadena = prompt("Escribe la cadena");
+
+        // Convierte la cadena a minúsculas y la guarda en 'minus'
+        let minus = cadena.toLocaleLowerCase();
+        // Convierte la cadena a mayúsculas y la guarda en 'mayus'
+        let mayus = cadena.toLocaleUpperCase();
+
+        // Compara la cadena original con la versión en minúsculas
+        if(cadena == minus){
+            // Si la cadena está completamente en minúsculas, muestra un mensaje
+            alert("Todo esta en minusculas");
+        // Compara la cadena original con la versión en mayúsculas
+        } else if(cadena == mayus){
+            // Si la cadena está completamente en mayúsculas, muestra un mensaje
+            alert("Todo esta en mayusculas");
+        } else {
+            // Si la cadena está mezclada, muestra otro mensaje
+            alert("Todo mezclado")
+        }
+    </script>
+</body>
+</html>

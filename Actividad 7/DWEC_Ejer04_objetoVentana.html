@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Botón que al hacer clic ejecuta la función abrirVentana() -->
+    <button onclick="abrirVentana()">Abrir la pagina</button>
+
+    <script>
+        // Función que se ejecuta al hacer clic en el botón
+        function abrirVentana(){
+            // Abre una nueva ventana con la URL de Google, con un tamaño de 400x400 píxeles
+            let ventana = window.open("https://www.google.com/?hl=es", "_blank", "width=400, height=400"); 
+            
+            // Cambia el tamaño de la ventana recién abierta a 800x800 píxeles
+            window.resizeTo(800,800);
+        }
+    </script>
+</body>
+</html>

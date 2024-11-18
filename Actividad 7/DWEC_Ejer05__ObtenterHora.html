@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Etiquetas para mostrar la hora, minutos y segundos -->
+    <h3>Son las: </h3>
+    <h3 id="horas"></h3>
+    <h3 id="minutos"></h3>
+    <h3 id="segundos"></h3>
+
+    <!-- Botón que al hacer clic ejecuta la función actualizarHora() -->
+    <button onclick="actualizarHora()">Actualizar hora</button>
+
+    <script>
+        // Función para actualizar la hora, minutos y segundos en la página
+        function actualizarHora(){
+            // Crea un objeto de fecha con la fecha y hora actuales
+            let tiempo = new Date();
+
+            // Obtiene las horas, minutos y segundos del objeto 'tiempo'
+            let hora = tiempo.getHours();
+            let mins = tiempo.getMinutes();
+            let secs = tiempo.getSeconds();
+
+            // Actualiza el contenido de las etiquetas HTML con los valores obtenidos
+            let horaActu = document.getElementById("horas");
+            horaActu.innerText = hora;  // Muestra la hora en la etiqueta 'horas'
+
+            let minActu = document.getElementById("minutos");
+            minActu.innerText = mins;  // Muestra los minutos en la etiqueta 'minutos'
+
+            let secsActu = document.getElementById("segundos");
+            secsActu.innerText = secs;  // Muestra los segundos en la etiqueta 'segundos'
+        }
+    </script>
+</body>
+</html>

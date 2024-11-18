@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Solicita que el usuario ingrese un texto -->
+    <h4>Introduce tu texto</h4>
+    <textarea name="texto" id="texto"></textarea>
+
+    <!-- Muestra el número de palabras del texto -->
+    <p>Numero de palabras:</p>
+    <p id="palabras"></p>
+
+    <script>
+        // Función que cuenta el número de palabras en el texto ingresado
+        function contar(){
+            // Obtiene el texto que el usuario ha introducido
+            let texto = document.getElementById("texto").value;
+            // Inicializa la variable que almacenará el resultado
+            let resultado = 0;
+
+            // Divide el texto en palabras usando el espacio como separador
+            let palabras = texto.split(" ");
+
+            // Recorre todas las palabras del array
+            palabras.forEach(function(palabra){
+                // Incrementa el contador de palabras por cada palabra en el array
+                resultado++;
+            });
+
+            // Muestra el resultado (el número de palabras) en la página
+            let palabrasResultado = document.getElementById("palabras");
+            palabrasResultado.innerText = resultado;
+        }
+
+        // Llama a la función contar cada 100 milisegundos para que el número de palabras se actualice en tiempo real
+        setInterval(contar, 100);
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Solicita al usuario que ingrese una fecha en formato YYYY-MM-DD
+        let fecha = new Date(prompt("Introduce una fecha en formato YYYY-MM-DD"));
+
+        // Obtiene el año de la fecha ingresada (año de nacimiento)
+        let anioNacimiento = fecha.getFullYear();
+        
+        // Obtiene la fecha actual
+        let fechaActual = new Date();
+        
+        // Obtiene el año actual
+        let anioActual = fechaActual.getFullYear();
+
+        // Calcula la edad restando el año de nacimiento del año actual
+        let edad = anioActual - anioNacimiento;
+        
+        // Muestra la edad calculada en una alerta
+        alert(edad);
+    </script>
+</body>
+</html>
