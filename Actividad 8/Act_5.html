@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--Formulario-->
+    <form onsubmit="return comprobarNombre()">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre">
+        <br><br>
+        <input type="submit" id="enviar">
+    </form>
+
+    <script>
+        //Verifica que el nombre solo tiene letras normales y numeros sin espacios y caracteres especiales
+        function comprobarNombre(){
+            let nombre = document.getElementById("nombre").value;
+
+            if (nombre.match(/[^a-zA-Z0-9]/g, '')){
+                alert ("El nombre no puede tener ni espacios ni caracteres especiales");
+                return false;
+            }else{
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>

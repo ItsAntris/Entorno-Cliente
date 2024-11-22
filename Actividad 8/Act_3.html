@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    <!--Formulario-->
     <form action="">
         <label for="contraseña">Contraseña:</label>
         <input type="password" id="contraseña" placeholder="Introduce tu contraseña">
@@ -18,6 +19,7 @@
     </form>
 
     <script>
+        //Al marcar un check muestra la contraseña, sino la muestra censurada
         function mostrarContraseña(){
             let contraseña=document.getElementById("contraseña");
             let confirmarContraseña=document.getElementById("confirmarContraseña");

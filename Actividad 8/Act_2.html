@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    <!--Formulario-->
     <form onsubmit="return validarDatos()">
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre" placeholder="Introduce tu nombre">
@@ -22,6 +23,7 @@
     <p id="error" style="display: none;">Todos los campos tienen que estar rellenos</p>
 
     <script>
+        //Verifica que ningun campo del formulario esta vacío y si lo hay muestra un error
         function validarDatos(){
             let nombre=document.getElementById("nombre").value;
             let apellido=document.getElementById("apellido").value;

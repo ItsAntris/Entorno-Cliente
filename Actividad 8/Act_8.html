@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--Formulario-->
+    <form onsubmit="validarFormulario(event)">
+        <label for="campoTexto">Introduce un dato:</label>
+        <input type="text" id="campoTexto">
+        <br><br>
+        <button type="submit">Enviar</button>
+        <p id="error"></p>
+    </form>
+
+    <script>
+        function validarFormulario(event) {
+            // Evitar envío del formulario si el campo está vacío
+            const campo = document.getElementById("campoTexto").value.trim();
+            const mensajeError = document.getElementById("error");
+
+            if (campo === "") {
+                // Cancelar el enio del formulario
+                event.preventDefault();
+                mensajeError.textContent = "El campo no puede estar vacío. Por favor, escribe algo.";
+            } else {
+                // Quita mensaje de error si el campo es válido
+                mensajeError.textContent = "";
+            }
+        }
+    </script>
+</body>
+</html>

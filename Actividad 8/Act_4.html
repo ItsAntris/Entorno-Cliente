@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    <!--Formulario-->
     <form onsubmit="return comprobarLongitud()">
         <label for="comentario">Comentario</label>
         <input type="text" id="comentario">
@@ -13,17 +14,17 @@
         <input type="submit" id="enviar">
     </form>
 
-    <br><br>
-
-    <p>Te faltan</p>
-
     <script>
-        function comprobarLongitud(){
-            let texto=document.getElementById("comentario").value;
+        //Comprueba si el comentario tiene al menos 50 caracteres, sino te salta una alerta diciendo cuantos faltan
+        function comprobarLongitud() {
+            let texto = document.getElementById("comentario").value;
+            let caracteresFaltantes = 50 - texto.length;
 
-            if(texto.lenght<51){
-
+            if (texto.length < 51) {
+                alert("El comentario debe tener al menos 50 caracteres. Te faltan " +caracteresFaltantes + " caracteres");
+                return false;
             }
+            return true;
         }
     </script>
 </body>

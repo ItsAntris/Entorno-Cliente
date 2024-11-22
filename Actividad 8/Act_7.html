@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento</title>
+</head>
+<body>
+    <!--Formulario-->
+    <form onsubmit="return comprobarLongitud()">
+        <label for="comentario">Comentario</label>
+        <textarea id="comentario" oninput="mostrarCaracteres()"></textarea>
+        <p id="contador"></p>
+        <br><br>
+        <input type="submit" id="enviar" value="Enviar">
+    </form>
+
+    <script>
+        // Función para mostrar en tiempo real la cantidad de caracteres escritos
+        function mostrarCaracteres() {
+            let texto = document.getElementById("comentario").value;
+            let contador = texto.length;
+
+            // Mostrar la cantidad de caracteres
+            let mensaje = `Has escrito ${contador} caracteres.`;
+            if (contador > 200) {
+                mensaje += "Has superado el límite de 200 caracteres.";
+            }
+
+            document.getElementById("contador").textContent = mensaje;
+        }
+
+        // Comprueba si el comentario pasa de los 200 caracteres
+        function comprobarLongitud() {
+            let texto = document.getElementById("comentario").value;
+            if (texto.length > 200) {
+                alert("El comentario no debe exceder los 200 caracteres.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
