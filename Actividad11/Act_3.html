@@ -7,12 +7,14 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
+    <!-- formulario con elementos -->
     <form>
         <select id="selector">
             <option value="">Seleccione</option>
             <option value="opcion1">Opción 1</option>
             <option value="opcion2">Opción 2</option>
         </select>
+        <!-- campo de texto dentro del formulario -->
         <div id="campo-extra" style="display: none;">
             <label>Información Adicional:</label>
             <input type="text">
@@ -20,8 +22,11 @@
     </form>
     <script>
         $(function () {
+            //evento al hacer clic
             $('#selector').on('change', function () {
+                //comprobar si el valor es valido
                 if ($(this).val()) {
+                    //muestra el elemento
                     $('#campo-extra').slideDown();
                 } else {
                     $('#campo-extra').slideUp();

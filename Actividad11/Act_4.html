@@ -11,10 +11,14 @@
     <div id="message"></div>
     <script>
         $(function () {
+            //asignar input
             $('#text-box').on('input', function () {
+                //cambia el estilo
                 $(this).css('background-color', $(this).val() ? '#f0f8ff' : '');
             });
+            //escucha la tecla presionada
             $(document).on('keydown', function (e) {
+                //si se pulta enter salta el mensaje
                 if (e.key === 'Enter') {
                     $('#message').text('¡Se ha presionado Enter!');
                 }

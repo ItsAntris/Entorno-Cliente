@@ -6,6 +6,7 @@
     <title>Menú Dinámico</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
+        /*estilo del menu sin desplegar y desplegado*/
         #menu {
             display: none;
             list-style: none;
@@ -23,6 +24,7 @@
     </style>
 </head>
 <body>
+    <!-- menu -->
     <div id="menu-container">Abrir Menú</div>
     <ul id="menu">
         <li data-action="1">Opción 1</li>
@@ -31,9 +33,12 @@
     </ul>
     <script>
         $(function () {
+            //evento al hacer clic
             $('#menu-container').on('click', function () {
+                //muestra el menu
                 $('#menu').slideToggle();
             });
+            //evento al hacer clic en cada elemento
             $('#menu li').on('click', function () {
                 alert(`Has seleccionado la acción ${$(this).data('action')}`);
             });
