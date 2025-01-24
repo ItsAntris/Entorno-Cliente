@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Dinámico</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <form>
+        <select id="selector">
+            <option value="">Seleccione</option>
+            <option value="opcion1">Opción 1</option>
+            <option value="opcion2">Opción 2</option>
+        </select>
+        <div id="campo-extra" style="display: none;">
+            <label>Información Adicional:</label>
+            <input type="text">
+        </div>
+    </form>
+    <script>
+        $(function () {
+            $('#selector').on('change', function () {
+                if ($(this).val()) {
+                    $('#campo-extra').slideDown();
+                } else {
+                    $('#campo-extra').slideUp();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

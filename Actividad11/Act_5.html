@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .image { display: none; }
+    </style>
+</head>
+<body>
+    <button data-category="1">Categoría 1</button>
+    <button data-category="2">Categoría 2</button>
+    <button id="hide-all">Ocultar Imágenes</button>
+    <div data-category="1" class="image">Imagen 1</div>
+    <div data-category="2" class="image">Imagen 2</div>
+    <script>
+        $(function () {
+            $('button[data-category]').on('click', function () {
+                const category = $(this).data('category');
+                $('.image').hide().filter(`[data-category="${category}"]`).fadeIn();
+            });
+            $('#hide-all').on('click', function () {
+                $('.image').fadeOut();
+            });
+        });
+    </script>
+</body>
+</html>

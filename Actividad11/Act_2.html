@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Dinámico</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #menu {
+            display: none;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        #menu li {
+            background-color: lightgray;
+            padding: 10px;
+            cursor: pointer;
+        }
+        #menu li:hover {
+            background-color: darkgray;
+        }
+    </style>
+</head>
+<body>
+    <div id="menu-container">Abrir Menú</div>
+    <ul id="menu">
+        <li data-action="1">Opción 1</li>
+        <li data-action="2">Opción 2</li>
+        <li data-action="3">Opción 3</li>
+    </ul>
+    <script>
+        $(function () {
+            $('#menu-container').on('click', function () {
+                $('#menu').slideToggle();
+            });
+            $('#menu li').on('click', function () {
+                alert(`Has seleccionado la acción ${$(this).data('action')}`);
+            });
+        });
+    </script>
+</body>
+</html>

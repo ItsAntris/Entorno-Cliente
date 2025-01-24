@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación de Formularios</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <form id="form">
+        <input type="text" id="name" placeholder="Nombre">
+        <input type="email" id="email" placeholder="Email">
+        <button type="submit">Enviar</button>
+    </form>
+    <script>
+        $(function () {
+            $('#form').on('submit', function (e) {
+                e.preventDefault();
+                $('.notification').remove();
+                let valid = true;
+                if (!$('#name').val()) {
+                    valid = false;
+                    $('<div class="notification">El nombre es obligatorio</div>').hide().appendTo('body').fadeIn();
+                }
+                if (!$('#email').val().match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+                    valid = false;
+                    $('<div class="notification">El email no es válido</div>').hide().appendTo('body').fadeIn();
+                }
+                if (valid) {
+                    $('<div class="notification">Formulario válido</div>').hide().appendTo('body').fadeIn();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

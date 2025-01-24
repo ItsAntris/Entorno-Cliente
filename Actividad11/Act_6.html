@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barra de Progreso</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #progress-container {
+            width: 100%;
+            background-color: #f3f3f3;
+            border: 1px solid #ccc;
+            height: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        #progress-bar {
+            width: 0;
+            height: 100%;
+            background-color: #4caf50;
+            transition: width 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+    </div>
+    <button id="increase-progress">Aumentar Progreso</button>
+    <button id="reset-progress">Reiniciar Progreso</button>
+    <script>
+        $(function () {
+            let progress = 0;
+            $('#increase-progress').on('click', function () {
+                if (progress < 100) {
+                    progress += 20;
+                    $('#progress-bar').css('width', progress + '%');
+                }
+            });
+            $('#reset-progress').on('click', function () {
+                progress = 0;
+                $('#progress-bar').css('width', '0%');
+            });
+        });
+    </script>
+</body>
+</html>

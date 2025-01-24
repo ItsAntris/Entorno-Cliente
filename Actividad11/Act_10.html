@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Contextual</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #context-menu {
+            display: none;
+            position: absolute;
+            background-color: white;
+            border: 1px solid #ccc;
+            z-index: 1000;
+            padding: 5px;
+        }
+        #context-menu div {
+            padding: 5px;
+            cursor: pointer;
+        }
+        #context-menu div:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">Haz clic derecho aquí</div>
+    <div id="context-menu">
+        <div data-action="color">Cambiar Color</div>
+        <div data-action="show">Mostrar Mensaje</div>
+    </div>
+    <script>
+        $(function () {
+            $('#content').on('contextmenu', function (e) {
+                e.preventDefault();
+                $('#context-menu').css({ top: e.pageY, left: e.pageX }).fadeIn();
+            });
+            $(document).on('click', function () {
+                $('#context-menu').fadeOut();
+            });
+            $('#context-menu div').on('click', function () {
+                const action = $(this).data('action');
+                if (action === 'color') {
+                    $('#content').css('background-color', '#add8e6');
+                } else if (action === 'show') {
+                    alert('¡Mensaje mostrado!');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

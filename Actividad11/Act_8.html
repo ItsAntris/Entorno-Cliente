@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Contenidos</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <button data-target="1">Cambiar Bloque 1</button>
+    <button data-target="2">Cambiar Bloque 2</button>
+    <button data-target="3">Cambiar Bloque 3</button>
+    <div id="block-1">Contenido 1</div>
+    <div id="block-2">Contenido 2</div>
+    <div id="block-3">Contenido 3</div>
+    <script>
+        $(function () {
+            $('button').on('click', function () {
+                const target = $(this).data('target');
+                $(`#block-${target}`).fadeOut(function () {
+                    $(this).text(`Nuevo contenido para Bloque ${target}`).fadeIn();
+                });
+            });
+        });
+    </script>
+</body>
+</html>

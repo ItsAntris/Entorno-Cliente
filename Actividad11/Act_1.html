@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Documentos Dinámicos</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .hidden-element {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.8s ease;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button id="show-elements">Mostrar Elementos</button>
+    </div>
+    <div class="hidden-element">Elemento 1</div>
+    <div class="hidden-element">Elemento 2</div>
+    <div class="hidden-element">Elemento 3</div>
+    <script>
+        $(document).ready(function () {
+            $('#show-elements').on('click', function () {
+                $('.hidden-element').each(function () {
+                    $(this).css('display', 'block');
+                    setTimeout(() => $(this).css('opacity', '1'), 50);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
