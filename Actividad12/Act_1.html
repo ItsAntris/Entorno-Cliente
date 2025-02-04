@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <script>
+// Realiza una petición GET a la URL indicada
+fetch('https://jsonplaceholder.typicode.com/posts/1')
+  // Convierte la respuesta en formato JSON
+  .then(response => response.json())
+  // Muestra los datos recibidos en la consola
+  .then(data => console.log(data))
+  // Captura y muestra cualquier error que ocurra durante la petición
+  .catch(error => console.error('Error:', error));
+
+  </script>
+</body>
+</html>

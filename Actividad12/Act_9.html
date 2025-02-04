@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Indicador de carga que se mostrará mientras se procesa la petición -->
+    <div id="loadingIndicator" style="display: none;">Cargando...</div>
+    <!-- Contenedor para mostrar los datos una vez obtenidos -->
+    <div id="dataContainer"></div>
+    <script>
+        // Se obtienen las referencias a los elementos del DOM
+        const loadingIndicator = document.getElementById('loadingIndicator');
+        const dataContainer = document.getElementById('dataContainer');
+
+        // Función para mostrar el indicador de carga
+        function showLoadingIndicator() {
+            loadingIndicator.style.display = 'block';
+        }
+
+        // Función para ocultar el indicador de carga
+        function hideLoadingIndicator() {
+            loadingIndicator.style.display = 'none';
+        }
+
+        // Función para mostrar los datos obtenidos
+        function displayData(data) {
+            dataContainer.textContent = JSON.stringify(data, null, 2);
+        }
+
+        // Función para manejar errores
+        function handleError(error) {
+            console.error('Error al obtener los datos', error);
+        }
+
+        // Se muestra el indicador de "Cargando..."
+        showLoadingIndicator();
+
+        // Se realiza la petición GET
+        fetch('https://jsonplaceholder.typicode.com/posts/1')
+            .then(response => response.json()) // Se convierte la respuesta a JSON
+            .then(data => {
+                hideLoadingIndicator(); // Oculta el indicador
+                displayData(data); // Muestra los datos
+            })
+            .catch(error => {
+                hideLoadingIndicator(); // Oculta el indicador
+                handleError(error); // Maneja el error
+            });
+    </script>
+</body>
+</html>

@@ -6,6 +6,7 @@
     <title>Barra de Progreso</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
+        /*estilos css*/
         #progress-container {
             width: 100%;
             background-color: #f3f3f3;
@@ -23,20 +24,25 @@
     </style>
 </head>
 <body>
+    <!-- barra de progreso -->
     <div id="progress-container">
         <div id="progress-bar"></div>
     </div>
+    <!-- botones para aumentar progreso y reinciar progreso -->
     <button id="increase-progress">Aumentar Progreso</button>
     <button id="reset-progress">Reiniciar Progreso</button>
     <script>
         $(function () {
+            //progreso a 0
             let progress = 0;
+            //aumentar progreso
             $('#increase-progress').on('click', function () {
                 if (progress < 100) {
                     progress += 20;
                     $('#progress-bar').css('width', progress + '%');
                 }
             });
+            //reiniciar progreso
             $('#reset-progress').on('click', function () {
                 progress = 0;
                 $('#progress-bar').css('width', '0%');

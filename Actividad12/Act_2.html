@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Creamos un objeto con los datos que queremos enviar
+        const data = {
+            nombre: "Juan",
+            edad: 25
+        };
+
+        // Función para enviar datos al servidor
+        async function sendData(url, data) {
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+                const result = await response.json();
+                console.log(result);
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+        // Llamamos a la función con la URL y los datos
+        sendData('https://jsonplaceholder.typicode.com/posts', data);
+    </script>
+</body>
+</html>

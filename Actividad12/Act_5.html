@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Obteniendo publicaciones de la API
+        fetch('https://jsonplaceholder.typicode.com/posts')
+            .then(response => response.json()) // Analizando la respuesta JSON
+            .then(data => console.log(data)) // Registrando los datos en la consola
+            .catch(error => console.error('Error:', error)); // Manejando cualquier error
+
+        // Creando un nuevo objeto de publicación
+        const newPost = { 
+            title: "Nuevo Post", 
+            body: "Contenido del post", 
+            userId: 1 
+        };
+
+        // Enviando una solicitud POST para crear una nueva publicación
+        fetch('https://jsonplaceholder.typicode.com/posts', {
+            method: 'POST', // Método HTTP
+            headers: {
+                'Content-Type': 'application/json' // Estableciendo el tipo de contenido a JSON
+            },
+            body: JSON.stringify(newPost) // Convirtiendo el nuevo objeto de publicación a JSON
+        })
+            .then(response => response.json()) // Analizando la respuesta JSON
+            .then(data => console.log(data)) // Registrando los datos en la consola
+            .catch(error => console.error('Error:', error)); // Manejando cualquier error
+    </script>
+</body>
+</html>

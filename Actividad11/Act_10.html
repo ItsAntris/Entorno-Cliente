@@ -6,6 +6,7 @@
     <title>Menú Contextual</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
+        /*estilo ccs*/
         #context-menu {
             display: none;
             position: absolute;
@@ -24,24 +25,34 @@
     </style>
 </head>
 <body>
+    <!-- mensaje de la pagina -->
     <div id="content">Haz clic derecho aquí</div>
+    <!-- mensajes al hacer clic derecho -->
     <div id="context-menu">
         <div data-action="color">Cambiar Color</div>
         <div data-action="show">Mostrar Mensaje</div>
     </div>
     <script>
         $(function () {
+            //muestra el menu al hacer clic derecho
             $('#content').on('contextmenu', function (e) {
+                //evita el menu por defecto del navegador
                 e.preventDefault();
+                //posisiona el menu y le da efecto
                 $('#context-menu').css({ top: e.pageY, left: e.pageX }).fadeIn();
             });
+            //oculta el menu con un egecto
             $(document).on('click', function () {
                 $('#context-menu').fadeOut();
             });
+
+            //realiza una accion u otra dependidendo de si se elige una opcion u otra
             $('#context-menu div').on('click', function () {
                 const action = $(this).data('action');
+                //realiza la accion de cambiar de color
                 if (action === 'color') {
                     $('#content').css('background-color', '#add8e6');
+                //realiza la accion de mostrar el mensaje
                 } else if (action === 'show') {
                     alert('¡Mensaje mostrado!');
                 }

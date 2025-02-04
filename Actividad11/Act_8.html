@@ -7,17 +7,23 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
+    <!-- botones para cambiar el contenido -->
     <button data-target="1">Cambiar Bloque 1</button>
     <button data-target="2">Cambiar Bloque 2</button>
     <button data-target="3">Cambiar Bloque 3</button>
+    <!-- bloques de contenido que cambian -->
     <div id="block-1">Contenido 1</div>
     <div id="block-2">Contenido 2</div>
     <div id="block-3">Contenido 3</div>
     <script>
         $(function () {
+            //evento al hacer clic
             $('button').on('click', function () {
+                //obtiene el valor del atributo
                 const target = $(this).data('target');
+                //seleccionamos bloque con el id
                 $(`#block-${target}`).fadeOut(function () {
+                    //cambia el contenido
                     $(this).text(`Nuevo contenido para Bloque ${target}`).fadeIn();
                 });
             });

@@ -15,15 +15,19 @@
     <button data-category="2">Categoría 2</button>
     <button id="hide-all">Ocultar Imágenes</button>
     <!-- imagenes -->
-    <div data-category="1" class="image" src="https://ethic.es/wp-content/uploads/2023/03/imagen.jpg"></div>
-    <div data-category="2" class="image">Imagen 2</div>
+    <img data-category="1" class="image" src="https://ethic.es/wp-content/uploads/2023/03/imagen.jpg">
+    <img data-category="2" class="image" src="https://empresas.blogthinkbig.com/wp-content/uploads/2019/11/Imagen3-245003649.jpg?w=800">
     <script>
         $(function () {
+            //evento al pulsar el boton
             $('button[data-category]').on('click', function () {
+                //obtiene el valor de atributo
                 const category = $(this).data('category');
+                //oculta todas las imagenes
                 $('.image').hide().filter(`[data-category="${category}"]`).fadeIn();
             });
             $('#hide-all').on('click', function () {
+                //oculta todas las imagenes
                 $('.image').fadeOut();
             });
         });

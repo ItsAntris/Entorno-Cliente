@@ -7,7 +7,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
+    <!-- boton -->
     <button id="load-data">Cargar Datos</button>
+    <!-- tabla -->
     <table id="data-table" border="1">
         <thead>
             <tr><th>ID</th><th>Nombre</th><th>Email</th></tr>
@@ -16,8 +18,11 @@
     </table>
     <script>
         $(function () {
+            //evento al hacer clic
             $('#load-data').on('click', function () {
+                //vacia la tabla
                 $('#data-table tbody').empty();
+                //actualiza la tabla sin recargar la pagina
                 $.ajax({
                     url: 'https://jsonplaceholder.typicode.com/users',
                     method: 'GET',

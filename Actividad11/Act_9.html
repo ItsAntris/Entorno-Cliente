@@ -7,6 +7,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
+    <!-- formulario de registro -->
     <form id="form">
         <input type="text" id="name" placeholder="Nombre">
         <input type="email" id="email" placeholder="Email">
@@ -14,18 +15,24 @@
     </form>
     <script>
         $(function () {
+            //evento al clic
             $('#form').on('submit', function (e) {
+                //evita que recargue la página
                 e.preventDefault();
+                //elimina las notificaciones
                 $('.notification').remove();
                 let valid = true;
+                //si el nombre no es valido da error y muestra un mensaje
                 if (!$('#name').val()) {
                     valid = false;
                     $('<div class="notification">El nombre es obligatorio</div>').hide().appendTo('body').fadeIn();
                 }
+                //si el email no es valido da error y muestra un mensaje
                 if (!$('#email').val().match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
                     valid = false;
                     $('<div class="notification">El email no es válido</div>').hide().appendTo('body').fadeIn();
                 }
+                //si es valido muestra que esta correcto
                 if (valid) {
                     $('<div class="notification">Formulario válido</div>').hide().appendTo('body').fadeIn();
                 }
